@@ -59,6 +59,9 @@ assertion invalid: assertion Conditions AudienceRestriction does not contain "<y
 (This comparison is made
 [in `service_provider.go`](https://github.com/crewjam/saml/blob/main/service_provider.go#L985).)
 
+The response that Microsoft returns doesn't have a `cn` attribute; instead, we
+use the `http://schemas.microsoft.com/identity/claims/displayname` attribute.
+
 ### Caveats
 We notably didn't upload our certificate. Given this use case (this application
 doesn't make actual requests once we have the user's name and email address),
